@@ -13,15 +13,14 @@ import imageio
 from colormath.color_objects import sRGBColor, LabColor
 from colormath.color_conversions import convert_color
 from colormath.color_diff import delta_e_cie1976
-import numpy
 
 
-numpy.set_printoptions(threshold=sys.maxsize)
+np.set_printoptions(threshold=sys.maxsize)
 
 def patch_asscalar(a):
     return a.item()
 
-setattr(numpy, "asscalar", patch_asscalar)
+setattr(np, "asscalar", patch_asscalar)
 
 
 def main(argv):
